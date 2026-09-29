@@ -4,15 +4,36 @@ const intro = document.getElementById('intro');
 const messageScreen = document.getElementById('messageScreen');
 const scatteredFlowers = document.getElementById('scatteredFlowers');
 const secretTrigger = document.getElementById('secretTrigger');
-const secretNote = document.getElementById('secretNote');
+const heartPopout = document.getElementById('heartPopout');
+const heartPopoutContent = document.querySelector('.heart-popout-content');
+const heartPopoutClose = document.querySelector('.heart-popout-close');
 const flowers = ['🌸', '🌷', '🌺', '🌼', '🌹', '✿', '♡'];
 let opened = false;
 
-if (secretTrigger && secretNote) {
+if (secretTrigger && heartPopout && heartPopoutContent && heartPopoutClose) {
+	const closeHeartPopout = () => {
+		heartPopout.hidden = true;
+		heartPopout.setAttribute('aria-hidden', 'true');
+		secretTrigger.setAttribute('aria-expanded', 'false');
+		messageScreen.inert = false;
+		secretTrigger.focus();
+	};
+
 	secretTrigger.addEventListener('click', () => {
-		const isRevealed = secretTrigger.getAttribute('aria-expanded') === 'true';
-		secretTrigger.setAttribute('aria-expanded', String(!isRevealed));
-		secretNote.hidden = isRevealed;
+		heartPopout.hidden = false;
+		heartPopout.setAttribute('aria-hidden', 'false');
+		secretTrigger.setAttribute('aria-expanded', 'true');
+		messageScreen.inert = true;
+		heartPopoutClose.focus();
+	});
+
+	heartPopoutClose.addEventListener('click', closeHeartPopout);
+	heartPopout.addEventListener('click', (event) => {
+		if (event.target === heartPopout) closeHeartPopout();
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && !heartPopout.hidden) closeHeartPopout();
 	});
 }
 

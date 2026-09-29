@@ -343,13 +343,77 @@ h1, h2, p { margin-top: 0; }
 .secret-trigger:hover { transform: scale(1.18); }
 .secret-trigger:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
 
+.heart-popout[hidden] { display: none; }
+
+.heart-popout {
+	position: fixed;
+	z-index: 10;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	padding: 20px;
+	background: rgba(38,59,49,.36);
+	backdrop-filter: blur(4px);
+}
+
+.heart-popout-content {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: min(400px, calc(100vw - 40px));
+	aspect-ratio: 1;
+	animation: heart-pop .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.heart-popout-close {
+	position: absolute;
+	z-index: 1;
+	top: 8%;
+	right: 8%;
+	width: 42px;
+	height: 42px;
+	border: 1px solid rgba(38,59,49,.22);
+	border-radius: 50%;
+	background: rgba(255,253,247,.9);
+	color: var(--ink);
+	font: 28px/1 Georgia, 'Times New Roman', serif;
+	cursor: pointer;
+}
+
+.heart-popout-close:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.heart-popout-shape {
+	color: #b44754;
+	font: 320px/1 Georgia, 'Times New Roman', serif;
+	filter: drop-shadow(0 18px 20px rgba(58,64,45,.2));
+	user-select: none;
+}
+
+.heart-popout-message {
+	position: absolute;
+	top: 47%;
+	left: 50%;
+	width: 56%;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	color: #fffdf7;
+	font-size: 26px;
+	line-height: 1.15;
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(38,59,49,.24);
+}
+
 .secret-note {
-	max-width: 34ch;
-	margin: 10px auto 0 !important;
-	color: var(--muted);
-	font-size: 16px;
-	line-height: 1.55;
-	animation: reveal .35s ease both;
+	position: absolute;
+	top: 68%;
+	left: 50%;
+	width: 48%;
+	margin: 0;
+	transform: translateX(-50%);
+	color: #fffdf7;
+	font-size: 14px;
+	line-height: 1.35;
+	text-align: center;
 }
 
 .signature {
@@ -430,6 +494,11 @@ h1, h2, p { margin-top: 0; }
 	to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes heart-pop {
+	from { opacity: 0; transform: scale(.55); }
+	to { opacity: 1; transform: scale(1); }
+}
+
 @media (max-width: 520px) {
 	.screen { padding: 20px; }
 	.intro-content { gap: 15px; }
@@ -438,6 +507,10 @@ h1, h2, p { margin-top: 0; }
 	.bouquet-button.is-opening .bouquet-art { transform: scale(1.26); }
 	.message-screen { padding: 18px; }
 	.scattered-flower:nth-child(even) { opacity: .55; }
+	.heart-popout-content { width: min(320px, calc(100vw - 40px)); }
+	.heart-popout-shape { font-size: 260px; }
+	.heart-popout-message { width: 58%; font-size: 22px; }
+	.secret-note { top: 68%; width: 50%; font-size: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

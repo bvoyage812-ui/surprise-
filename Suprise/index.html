@@ -38,12 +38,19 @@
 					<p>but i wanted to make something special for you.</p>
 					<p>Something small, and easy to make.</p>
 					<p>So here's a little message for today. So it would cheer you up!</p>
-				<p class="closing">I love you <button class="secret-trigger" id="secretTrigger" type="button" aria-label="Reveal a little secret" aria-expanded="false" aria-controls="secretNote">♥</button></p>
-				<p class="secret-note" id="secretNote" hidden>Little secret: Even on the ordinary days, you're still my favorite part.</p>
+				<p class="closing">I love you <button class="secret-trigger" id="secretTrigger" type="button" aria-label="Show a big heart and a little secret" aria-expanded="false" aria-controls="heartPopout" aria-haspopup="dialog">♥</button></p>
 				<p class="signature">— Yours truly, Novia</p>
 			</article>
 		</section>
 	</main>
+	<div class="heart-popout" id="heartPopout" aria-hidden="true" hidden>
+		<div class="heart-popout-content" role="dialog" aria-modal="true" aria-labelledby="heartMessage" tabindex="-1">
+			<button class="heart-popout-close" type="button" aria-label="Close message">&times;</button>
+			<div class="heart-popout-shape" aria-hidden="true">♥</div>
+			<p class="heart-popout-message" id="heartMessage">I love you this big</p>
+			<p class="secret-note">Little secret: Even on the ordinary days, you're still my favorite part.</p>
+		</div>
+	</div>
 
 	<script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 	<script src="script.js" defer></script>

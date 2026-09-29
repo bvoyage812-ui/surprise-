@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7f3e9">
+	<title>A little something for you</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main>
+		<section class="screen intro" id="intro" aria-labelledby="intro-title">
+			<div class="intro-content">
+				<p class="eyebrow">Just a little suprise~</p>
+				<h1 id="intro-title">I made this just<br>for you</h1>
+				<p class="intro-copy">Sincerely yours, Novia.</p>
+
+				<button class="envelope-button" id="envelope" type="button" aria-label="Open the envelope">
+					<dotlottie-player class="envelope-animation" id="envelopeAnimation" src="asset/open%20envelope.lottie" background="transparent" autoplay="false" loop="false" aria-hidden="true"></dotlottie-player>
+				</button>
+
+				<span class="hint">Tap the envelope</span>
+			</div>
+		</section>
+
+		<section class="screen message-screen" id="messageScreen" aria-labelledby="message-title" aria-hidden="true">
+			<div class="scattered-flowers" id="scatteredFlowers" aria-hidden="true"></div>
+			<article class="message-content">
+				<div class="top-actions">
+					<a class="back-button" href="index.html" aria-label="Back to first page"><span aria-hidden="true">&larr;</span> Back to first page</a>
+					<a class="album-button" href="album.html" aria-label="Open the album">Album</a>
+				</div>
+				<div class="message-mark" aria-hidden="true">✳</div>
+				<p class="eyebrow">For mi churrito el negro</p>
+				<h2 id="message-title">Something special for you,<br> sent with love</h2>
+				<div class="message-copy">
+					<p>I know this is a simple message, or a code...</p>
+					<p>but i wanted to make something special for you.</p>
+					<p>Something small, and easy to make.</p>
+					<p>So here's a little message for today. So it would cheer you up!</p>
+				<p class="closing">I love you <span aria-hidden="true">♥</span></p>
+				<p class="signature">— Yours truly, Novia</p>
+			</article>
+		</section>
+	</main>
+
+	<script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+	<script src="script.js" defer></script>
+</body>
+</html>

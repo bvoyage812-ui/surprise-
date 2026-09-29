@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Our little album</title>
+	<link rel="stylesheet" href="album.css">
+</head>
+<body class="album-page">
+	<div class="album-particles" aria-hidden="true">
+		<span></span><span></span><span></span><span></span><span></span>
+		<span></span><span></span><span></span><span></span><span></span>
+	</div>
+	<main class="album-shell single-collage">
+		<div class="album-header">
+			<a class="album-back" href="index.html" aria-label="Back to first page"><span aria-hidden="true">&larr;</span> Back to first page</a>
+			<h1 class="album-title">Our little album</h1>
+		</div>
+		<section class="collage-frame" aria-label="Photo collage">
+			<div class="collage-photo photo-one" data-message="One of our best memories which you went to see the bridge will always be something I will look forward to in the future, is to being able to company you.">
+				<img src="../image/firstdate.jpg" alt="First date memory">
+			</div>
+			<div class="collage-photo photo-two" data-message="Our first month little celebration which I won't forget that you ate the cake and it was too sweet for your taste, i wanted to try it awe. I really loved this small moments with you.	">
+				<img src="../image/firstmonth.jpg" alt="First month memory">
+			</div>
+			<div class="collage-photo photo-three" data-message="Our second month celebration which felt more memorable because we were singing happy birthday to each other, it was realy funny and I was glad i bought these for us to enjoy, more memories to remember!">
+				<img src="../image/2ndmonth.jpg" alt="Second month memory">
+			</div>
+			<div class="collage-photo photo-four" data-message="Third month wasn't as special as before but I would still cherish it, mostly because you made me flan and it was the first I've received (virtually) from anyone. Someone baking food for me, it made me really happy">
+				<img src="../image/3rdmonth.jpg" alt="Third month memory">
+			</div>
+			<div class="collage-photo photo-five" data-message="Our supposed to be second date but it was a little too early for you to wake up so I sent you pictures instead, I was enjoyin the view here and praying as well.">
+				<img src="../image/2nddate.jpg" alt="Second date memory">
+			</div>
+			<div class="collage-photo photo-six" data-message="First long call ever and we were talking about so many things and i was happy with it.">
+				<img src="../image/firstlongcall.jpg" alt="First long call memory">
+			</div>
+			<div class="collage-photo photo-seven" data-message="The first ever celebration I made for you which I thought was really stupid, and I wanted to cheer you up :3">
+				<img src="../image/alittlecelebration.jpg" alt="Little celebration memory">
+			</div>
+			<div class="collage-photo photo-eight" data-message="Our second minecraft session which became something really memorable because of what happened after these pictures. A day I won't forget just because I was too energetic and shy? LOL">
+				<img src="../image/amomenticherished.jpg" alt="A moment I cherish memory">
+			</div>
+		</section>
+	</main>
+
+	<div class="album-modal" id="albumModal" aria-hidden="true">
+		<div class="album-modal-backdrop" data-close="true"></div>
+		<div class="album-modal-card" role="dialog" aria-modal="true" aria-labelledby="albumModalTitle">
+			<button class="album-modal-close" type="button" aria-label="Close message">&times;</button>
+			<h2 id="albumModalTitle">Memory</h2>
+			<p id="albumModalText">A little memory I always want to keep.</p>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

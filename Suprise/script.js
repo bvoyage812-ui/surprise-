@@ -3,8 +3,18 @@ const envelopeAnimation = document.getElementById('envelopeAnimation');
 const intro = document.getElementById('intro');
 const messageScreen = document.getElementById('messageScreen');
 const scatteredFlowers = document.getElementById('scatteredFlowers');
+const secretTrigger = document.getElementById('secretTrigger');
+const secretNote = document.getElementById('secretNote');
 const flowers = ['🌸', '🌷', '🌺', '🌼', '🌹', '✿', '♡'];
 let opened = false;
+
+if (secretTrigger && secretNote) {
+	secretTrigger.addEventListener('click', () => {
+		const isRevealed = secretTrigger.getAttribute('aria-expanded') === 'true';
+		secretTrigger.setAttribute('aria-expanded', String(!isRevealed));
+		secretNote.hidden = isRevealed;
+	});
+}
 
 if (envelopeAnimation && typeof envelopeAnimation.stop === 'function') {
 	envelopeAnimation.stop();
